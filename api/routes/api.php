@@ -13,9 +13,20 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::resource('tipoCargo', 'tipoCargoController');
-Route::resource('chapa', 'ChapaController');
-Route::resource('participante', 'ParticipanteController');
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+
+Route::group(['middleware' => 'api', 'prefix' => 'auth'], function() {
+    Route::post('login', 'AuthController@login');
+    Route::post('logout', 'AuthController@logout');
+    Route::post('refresh', 'AuthController@refresh');
+
 
 });
+
+Route::group(['middleware' => 'jwt.auth'], function() {
+    Route::post('auth/me', 'AuthController@me');
+    Route::resource('tipoCargo', 'tipoCargoController');
+    Route::resource('chapa', 'ChapaController');
+    Route::resource('participante', 'ParticipanteController');
+});
+
+

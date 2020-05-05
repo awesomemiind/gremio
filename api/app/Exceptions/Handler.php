@@ -58,6 +58,17 @@ class Handler extends ExceptionHandler
                 ,$exception->status);
             }
         }
+
+        if ($exception instanceof UnauthorizedHttpException){
+            return $exception;
+            if(get_parent_class($exception) instanceof TokenExpiredException){
+                return JR::JWTTokenExpired();
+            }elseif (get_parent_class($exception) instanceof TokenBlacklistedException){
+                return JR::JWTTokenBlacklisted();
+            }else{
+                return JR::JWTTokenInvalid();
+            }
+        }
         return parent::render($request, $exception);
     }
 }
