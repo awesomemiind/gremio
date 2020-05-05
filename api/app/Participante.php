@@ -19,4 +19,12 @@ class Participante extends Model
     public function setSlugAttribute($value) {
         $this->attributes['slug'] = Str::slug($value);
     }
+
+    public function chapa() {
+        return $this->belongsTo(\App\Chapa::class);
+    }
+
+    public function cargo() {
+        return $this->belongsTo(\App\TipoCargo::class);
+    }
 }
