@@ -34,10 +34,10 @@ class ChapaController extends Controller
 
     public function show($id)
     {
-        if($cargo = Chapa::find($id)) {
+        if($chapa = Chapa::find($id)) {
             return Response()->json([
                 'message' => 'Recurso encontrado',
-                'resource' => $cargo
+                'resource' => $chapa
             ], 200);
         }
 

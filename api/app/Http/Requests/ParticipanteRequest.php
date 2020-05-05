@@ -25,15 +25,17 @@ class ParticipanteRequest extends FormRequest
     {
         return [
             'nome' => 'required|max:100',
-            'chapa_id' => 'required',
-            'cargo_id' => 'required',
+            'chapa_id' => 'required|exists:chapas,id',
+            'cargo_id' => 'required|exists:tipo_cargos,id',
         ];
     }
 
     public function messages()
     {
         return [
-            'required' => 'O :attribute é obrigatorio'
+            'required' => 'O :attribute é obrigatorio',
+            'exists' => ':attribute não é um recurso existente'
         ];
     }
+
 }

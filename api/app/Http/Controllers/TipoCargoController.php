@@ -6,6 +6,7 @@ use App\Http\Requests\TipoCargoRequest;
 use Illuminate\Http\Request;
 use App\tipoCargo;
 use App\Services\TipoCargoService;
+use Illuminate\Support\Str;
 
 class TipoCargoController extends Controller
 {
@@ -51,8 +52,7 @@ class TipoCargoController extends Controller
      */
     public function show($id)
     {
-        $cargo = TipoCargo::find($id);
-        if($cargo) {
+        if($cargo = TipoCargo::find($id)) {
             return Response()->json([
                 'message' => 'Recurso encontrado',
                 'resource' => $cargo
