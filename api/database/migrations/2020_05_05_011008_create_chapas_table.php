@@ -21,9 +21,6 @@ class CreateChapasTable extends Migration
             $table->string('slug');
             $table->timestamps();
             
-            $table->unsignedBigInteger('created_by_user_id');
-            
-            $table->foreign('created_by_user_id')->references('id')->on('users');
         });
     }
 

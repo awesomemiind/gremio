@@ -16,10 +16,14 @@ class CreateParticipantesTable extends Migration
         Schema::create('participantes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome', 150);
-            $table->string('slug');
+            $table->string('email', 300)->nullable();
             $table->unsignedBigInteger('chapa_id')->nullable();
             $table->unsignedBigInteger('cargo_id')->nullable();
+            $table->string('slug');
             $table->timestamps();
+
+            $table->foreign('chapa_id')->references('id')->on('chapas');
+            $table->foreign('cargo_id')->references('id')->on('tipo_cargos');
         });
     }
 
