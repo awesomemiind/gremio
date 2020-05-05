@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\TipoCargoRequest;
 use App\tipoCargo;
 use Illuminate\Http\Request;
+use App\Services\TipoCargoService;
 use Illuminate\Support\Facades\Validator;
 
 class TipoCargoController extends Controller
@@ -28,15 +29,15 @@ class TipoCargoController extends Controller
     public function store(TipoCargoRequest $request)
     {
         $validatedData = $request->validated();
-        
+
         $tipo = $request->input('tipo');
-        
+
         if(! TipoCargo::where('tipo', $tipo)->first()) {
-            $newTipoCargo = TipoCargo::create($request->all());
+            $tipoCargo = TipoCargoService::create($request->all());
 
             return Response()->json([
                 'message' => 'Recurso criado',
-                'resource' => $newTipoCargo
+                'resource' => $tipoCargo
             ],201);
         }
 
@@ -74,8 +75,7 @@ class TipoCargoController extends Controller
         $validatedData = $request->validated();
 
         if($cargo = TipoCargo::find($id)) {
-            $cargo->fill($request->all())->update();
-            
+            $cargo = TipoCargoService::update($request->all(), $cargo);
             return Response()->json([
                 'message' => 'Recurso alterado',
                 'resource' => $cargo
@@ -94,7 +94,7 @@ class TipoCargoController extends Controller
     public function destroy($id)
     {
         if($cargo = TipoCargo::find($id)) {
-            $cargo->delete();
+            TipoCargoService::delete($cargo);
             return Response()->json(['message' => 'Recurso excluido'], 200);
         }
 

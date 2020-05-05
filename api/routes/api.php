@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 */
 
 Route::resource('tipoCargo', 'tipoCargoController');
+Route::resource('chapa', 'ChapaController');
 Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 });

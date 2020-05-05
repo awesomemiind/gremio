@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TipoCargoRequest extends FormRequest
+class ChapaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,19 +24,13 @@ class TipoCargoRequest extends FormRequest
     public function rules()
     {
         return [
-            'tipo' => 'required|max:100'
+            'nome' => 'required|max:100',
+            'slogan' => 'required|max:300',
         ];
-
     }
 
-    public function attributes()
+    public function messages()
     {
-        return [
-            'tipo' => 'Tipo do cargo'
-        ];
-    }
-
-    public function messages(){
         return [
             'required' => 'O :attribute é obrigatorio'
         ];

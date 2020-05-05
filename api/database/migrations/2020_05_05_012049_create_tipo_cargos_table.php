@@ -16,6 +16,7 @@ class CreateTipoCargosTable extends Migration
         Schema::create('tipo_cargos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('tipo', 100)->unique();
+            $table->string('slug');
         });
     }
 
