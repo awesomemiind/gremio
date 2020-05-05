@@ -1,0 +1,39 @@
+#home-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+.login-card {
+    height: 100vh;
+}
+
+.background-image {
+    background-image: url('/assets/images/login/background.jpg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container-card {
+    border: grey 1px solid;
+    display: flex;
+    flex-direction: column;
+    height: 320px;
+    top: 23%;
+    position: relative;
+}
+
+.header h1 {
+    font-weight: bold;
+    padding-bottom: 10px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    font-size: 2rem;
+}
+
+.header p {
+    display: block;
+    padding: 2px;
+}
