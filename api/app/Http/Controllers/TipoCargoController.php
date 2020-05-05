@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\TipoCargoRequest;
-use App\tipoCargo;
 use Illuminate\Http\Request;
+use App\tipoCargo;
 use App\Services\TipoCargoService;
-use Illuminate\Support\Facades\Validator;
 
 class TipoCargoController extends Controller
 {
