@@ -2,7 +2,6 @@
     height: 100vh;
     display: flex;
     flex-direction: row;
-    justify-content: start;
 }
 
 .login-card {
@@ -17,12 +16,16 @@
 }
 
 .container-card {
-    border: grey 1px solid;
     display: flex;
     flex-direction: column;
     height: 320px;
     top: 23%;
     position: relative;
+}
+
+
+.header {
+  margin-bottom: 15px;
 }
 
 .header h1 {
@@ -36,4 +39,16 @@
 .header p {
     display: block;
     padding: 2px;
+}
+
+label {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.invalid-feedback {
+  display: block !important;
+  margin-top: 6px;
 }
