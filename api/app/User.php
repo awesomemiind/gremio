@@ -47,4 +47,9 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
+
+    public function nivel()
+    {
+        return $this->belongsTo(\App\Nivel::class);
+    }
 }

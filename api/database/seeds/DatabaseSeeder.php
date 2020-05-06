@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(NivelTableSeeder::class);
         $this->call(UserTableSeeder::class);
         $this->call(TipoCargoTableSeeder::class);
         $this->call(ChapaTableSeeder::class);

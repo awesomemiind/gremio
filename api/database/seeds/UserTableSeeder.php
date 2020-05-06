@@ -12,12 +12,14 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
+        $user = User::create([
             'name' => 'root',
             'email' => 'root@root.com',
             'email_verified_at' => now(),
             'password' => bcrypt('123456'), // password
             'remember_token' => Str::random(10),
         ]);
+
+        $user->nivel()->associate(1)->update();
     }
 }

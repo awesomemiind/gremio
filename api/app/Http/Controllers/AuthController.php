@@ -81,6 +81,8 @@ class AuthController extends Controller
      */
     protected function respondWithToken($token)
     {
+        $user = \App\User::with('nivel')->find(auth()->user()->id);
+        return $user;
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
