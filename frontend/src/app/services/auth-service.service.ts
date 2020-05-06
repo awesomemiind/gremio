@@ -21,4 +21,5 @@ export class AuthServiceService {
       console.log(data)
     }))
   }
+
 }
