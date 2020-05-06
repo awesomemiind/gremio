@@ -2,6 +2,7 @@
   <div class="login-card col-md-4">
     <div class="container-card container">
 
+
       <!-- Header -->
       <div class="header">
         <h1>Login</h1>
@@ -9,6 +10,12 @@
         <p>Insira seus dados para prosseguir</p>
       </div>
       <!-- ... -->
+
+      <div class="alert alert-danger alert-dismissible show" role="alert" *ngIf="errorCredentials">
+        Email ou senha invalidos.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        </button>
+      </div>
 
       <!-- Form -->
       <div class="form">
