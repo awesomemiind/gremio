@@ -13,15 +13,15 @@ class ParticipanteTableSeeder extends Seeder
      */
     public function run()
     {
-        $count = 1;
-        $participantes = ['Participante um', 'Participante dois'];
-        foreach ($participantes as $participante) {
-            $data['nome'] = $participante;
-            $data['chapa_id'] = $count;
-            $data['cargo_id'] = $count;
+        // $count = 1;
+        // $participantes = ['Participante um', 'Participante dois'];
+        // foreach ($participantes as $participante) {
+        //     $data['nome'] = $participante;
+        //     $data['chapa_id'] = $count;
+        //     $data['cargo_id'] = $count;
 
-            ParticipanteService::create($data);
-            $count++;
-        }
+        //     ParticipanteService::create($data);
+        //     $count++;
+        // }
     }
 }

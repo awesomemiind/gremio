@@ -63,9 +63,11 @@ class ChapaController extends Controller
     {
         if($chapa = Chapa::find($id)) {
             ChapaService::delete($chapa);
+
             return Response()->json(['message' => 'Recurso excluido'], 200);
         }
 
-        return Response()->json([ 'message' => 'Recurso não encontrado'], 404);
+        return Response()->json([ 'message' => 'Recurso não encontrado'], 404); 
     }
+
 }

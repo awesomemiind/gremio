@@ -8,7 +8,7 @@ class Chapa extends Model
 {
     protected $table = 'chapas';
     protected $fillable = ['nome', 'slogan', 'ativo', 'slug'];
-  
+  	protected $hidden = ['created_at', 'updated_at'];
     public $timestamps = true;
 
     public function setNomeAttribute($value) {

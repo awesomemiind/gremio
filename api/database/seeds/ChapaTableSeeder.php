@@ -14,7 +14,7 @@ class ChapaTableSeeder extends Seeder
      */
     public function run()
     {
-        $chapas = ['Chapa um', 'Chapa dois'];
+        $chapas = ['Chapa um', 'Chapa dois', 'Chapa tres', 'Chapa quatro'];
         foreach ($chapas as $chapa) {
             Chapa::create([
                 'nome' => $chapa,
