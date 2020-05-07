@@ -66,6 +66,21 @@
   z-index: 1;
 }
 
+.sidebar-item-highlight, .sidebar-item-highlight > i{
+  background-color: blue;
+  color: white !important;
+  font-weight: bold;
+}
+
+.sidebar-brand-text {
+  color: black;
+  font-weight: bold;
+}
+
+.sidebar-brand-logo {
+  font-size: 1.5rem;
+  color: black;
+}
 @media all and (min-width: 992px) {
   .sidebar .nav>li.active-pro {
     position: absolute;

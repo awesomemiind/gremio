@@ -22,14 +22,14 @@ Route::group(['middleware' => 'api', 'prefix' => 'auth'], function() {
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
 
-
 });
 
 Route::group(['middleware' => 'jwt.auth'], function() {
     Route::post('auth/me', 'AuthController@me');
-    Route::resource('tipoCargo', 'tipoCargoController');
-    Route::resource('chapa', 'ChapaController');
-    Route::resource('participante', 'ParticipanteController');
 });
+
+Route::resource('tipoCargo', 'tipoCargoController');
+Route::resource('chapa', 'ChapaController');
+Route::resource('participante', 'ParticipanteController');
 
 

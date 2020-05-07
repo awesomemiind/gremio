@@ -9,14 +9,13 @@ export interface RouteInfo {
 }
 
 export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard',     title: 'Dashboard',         icon:'nc-bank',       class: '' },
-    { path: '/icons',         title: 'Icons',             icon:'nc-diamond',    class: '' },
-    { path: '/maps',          title: 'Maps',              icon:'nc-pin-3',      class: '' },
-    { path: '/notifications', title: 'Notifications',     icon:'nc-bell-55',    class: '' },
-    { path: '/user',          title: 'User Profile',      icon:'nc-single-02',  class: '' },
-    { path: '/table',         title: 'Table List',        icon:'nc-tile-56',    class: '' },
-    { path: '/typography',    title: 'Typography',        icon:'nc-caps-small', class: '' },
-    { path: '/upgrade',       title: 'Upgrade to PRO',    icon:'nc-spaceship',  class: 'active-pro' },
+    { path: '/dashboard',     title: 'Home',              icon:'fas fa-home',   class: '' },
+    { path: '/icons',         title: 'Users',             icon:'fas fa-user',   class: '' },
+    { path: '/maps',          title: 'Participantes',     icon:'fas fa-users',  class: '' },
+    { path: '/notifications', title: 'Chapas',            icon:'fas fa-book-open',    class: '' },
+    { path: '/user',          title: 'Cargos',            icon:'fas fa-briefcase',  class: '' },
+    // { path: '/table',         title: 'Votação',           icon:'far fa-clipboard',    class: '' },
+    // { path: '/upgrade',       title: 'Sair',              icon:'fas fa-sign-out-alt',  class: 'active-pro' },
 ];
 
 @Component({

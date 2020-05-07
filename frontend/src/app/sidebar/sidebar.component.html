@@ -1,21 +1,38 @@
 
 <div class="sidebar-wrapper">
   <div class="logo">
-    <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+    <a href="javascript:void(0)" class="simple-text logo-mini">
       <div class="logo-image-small">
-        <img src="assets/img/angular2-logo.png">
+        <!-- <img src="assets/img/angular2-logo.png"> -->
+        <i class="fas fa-rocket sidebar-brand-logo"></i>
       </div>
     </a>
-    <a href="https://www.creative-tim.com" class="simple-text logo-normal">
-      Creative Tim
+    <a href="javascript:void(0)" class="sidebar-brand-text logo-normal">
+      RocketVote
     </a>
   </div>
     <ul class="nav">
+        <!-- General menu items -->
         <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="{{menuItem.class}}">
             <a [routerLink]="[menuItem.path]">
-                <i class="nc-icon {{menuItem.icon}}"></i>
+                <i class="{{menuItem.icon}}"></i>
                 <p>{{menuItem.title}}</p>
             </a>
+        </li>
+        <!-- ... -->
+
+        <li routerLinkActive="active">
+          <a [routerLink]="'/table'" class="sidebar-item-highlight">
+              <i class="fas fa-box-open" style="color: white"></i>
+              <p>Votação</p>
+          </a>
+        </li>
+
+        <li routerLinkActive="active" class="active-pro">
+          <a [routerLink]="'/upgrade'">
+              <i class="fas fa-sign-out-alt"></i>
+              <p>Sair</p>
+          </a>
         </li>
     </ul>
 </div>
