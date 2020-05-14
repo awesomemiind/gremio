@@ -32,9 +32,9 @@ class ChapaController extends Controller
         return Response()->json([ 'message' => 'Recurso ja existente'], 400);
     }
 
-    public function show($id)
+    public function show($slug)
     {
-        if($chapa = Chapa::find($id)) {
+        if($chapa = Chapa::with('participantes')->where('slug', $slug)->first()) {
             return Response()->json([
                 'message' => 'Recurso encontrado',
                 'resource' => $chapa

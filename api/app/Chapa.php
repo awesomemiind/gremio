@@ -11,6 +11,9 @@ class Chapa extends Model
   	protected $hidden = ['created_at', 'updated_at'];
     public $timestamps = true;
 
+    public function participantes() {
+        return $this->hasMany(\App\Participante::class);
+    }
     public function setNomeAttribute($value) {
         $this->attributes['nome'] = strtolower($value);
     }

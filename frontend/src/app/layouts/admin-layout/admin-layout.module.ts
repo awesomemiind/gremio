@@ -15,6 +15,7 @@ import { MapsComponent }            from '../../pages/maps/maps.component';
 import { NotificationsComponent }   from '../../pages/notifications/notifications.component';
 import { UpgradeComponent }         from '../../pages/upgrade/upgrade.component';
 import { ChapasComponent }          from '../../pages/chapas/chapas.component';
+import { ChapasShowComponent } from './../../pages/chapas/components/chapas-show/chapas-show.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -35,7 +36,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     IconsComponent,
     MapsComponent,
     NotificationsComponent,
-    ChapasComponent
+    ChapasComponent,
+    ChapasShowComponent
   ]
 })
 

@@ -10,6 +10,7 @@ import { NotificationsComponent } from '../../pages/notifications/notifications.
 import { UpgradeComponent } from '../../pages/upgrade/upgrade.component';
 import { ChapasComponent } from '../../pages/chapas/chapas.component';
 
+import { ChapasShowComponent } from './../../pages/chapas/components/chapas-show/chapas-show.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -20,5 +21,16 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
-    { path: 'chapas',         component: ChapasComponent },
+    { path: 'chapas',
+      children: [
+        {
+          path: '',
+          component: ChapasComponent
+        },
+        {
+          path: ':slug',
+          component: ChapasShowComponent
+        }
+      ]
+    },
 ];
